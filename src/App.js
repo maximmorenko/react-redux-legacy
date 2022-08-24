@@ -1,12 +1,12 @@
 import React from 'react';
 import './App.css';
-//import { Counter } from './clicker_redux_hooks/counter';
+import { Counter } from './clicker_redux_hooks/counter';
 
 function App() {
     return (
         <div className="App">
-            {/* <h1>Hello Redux</h1> */}
-            {/* <Counter /> */}
+            <h1>Hello Redux</h1>
+            <Counter />
         </div>
     );
 }
