@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import { Counter } from './clicker_redux_hooks/counter';
+import { Counter } from './clicker_redux_class/counter';
 
 function App() {
     return (

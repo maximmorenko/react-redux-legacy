@@ -1,4 +1,4 @@
-import { configureStore } from "@reduxjs/toolkit";
+import { createStore, combineReducers } from "redux";
 
 const counter = (state = 0, action) => {
     switch (action.type) {
@@ -17,11 +17,18 @@ const counter = (state = 0, action) => {
     }
 };
 
-export const store = configureStore({
-    reducer: counter,
-});
+export const store = createStore(
+    combineReducers({
+        count: counter,
+    }),
+    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__() //для запуска расширения React Developer Tools
+);
 
 // actions
-export const increment = { type: "INCREMENT" };
-export const decrement = { type: "DECREMENT" };
-export const reset = { type: "RESET" };
+// export const increment = { type: "INCREMENT" };
+// export const decrement = { type: "DECREMENT" };
+// export const reset = { type: "RESET" };
+
+export const increment = () => ({ type: "INCREMENT" });
+export const decrement = () => ({ type: "DECREMENT" });
+export const reset = () => ({ type: "RESET" });
